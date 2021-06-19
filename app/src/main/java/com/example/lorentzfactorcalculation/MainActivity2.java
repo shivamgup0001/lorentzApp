@@ -1,6 +1,8 @@
 package com.example.lorentzfactorcalculation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.os.Bundle;
 import android.content.Context;
 import android.text.TextUtils;
@@ -29,6 +31,7 @@ public class MainActivity2 extends AppCompatActivity {
      //  ViewGroup layout = (ViewGroup) view.findViewById(R.id.widget101);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         editText3 =findViewById(R.id.editText3);
         button2 = findViewById(R.id.button2);
         textView2 = findViewById(R.id.textView2);

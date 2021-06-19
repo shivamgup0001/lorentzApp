@@ -1,6 +1,7 @@
 package com.example.lorentzfactorcalculation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -39,6 +40,7 @@ private int fact;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         textView4=findViewById(R.id.textView4);
         textView5=findViewById(R.id.textView5);
         CountDownTimer newtimer = new CountDownTimer(1000000000, 1000) {
