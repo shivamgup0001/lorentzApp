@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LorentzFactorCalculation">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity4"
+            android:label="Spi factor Calculation"
+            android:parentActivityName=".MainActivity3" ></activity>
+        <activity android:name=".MainActivity3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +22,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:label="Lorentz factor calculation"
+            android:parentActivityName=".MainActivity3" ></activity>
+        <activity
             android:name=".MainActivity2"
             android:label="Check for Lorentz factor"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

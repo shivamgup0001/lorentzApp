@@ -46,42 +46,44 @@ public class MainActivity2 extends AppCompatActivity {
                 else {
                     String s =editText3.getText().toString();
                     String s1 =editText4.getText().toString();
-                    long a1 = Long.parseLong(s);
-                    if (a1 < c) {
-                        double z = Math.pow((Math.pow(c, 2) - Math.pow(a1, 2)), 0.5);
-                        result1 = c / z;
 
-                        double y = Double.parseDouble(s1);
-                        // Toast.makeText(MainActivity.this, "result "+y, Toast.LENGTH_SHORT).show();
-                        if (y == result1) {
-                            Toast.makeText(MainActivity2.this, "Your answer is right", Toast.LENGTH_SHORT).show();
-                            textView2.setText("Your answer is correct ");
-                            view.setBackgroundResource(R.color.green);
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    view.setBackgroundResource(R.color.white);
-                                }
-                            }, 2000);
+                    if (TextUtils. isEmpty(editText4. getText(). toString()))
+                        Toast.makeText(MainActivity2.this, "Please enter a value", Toast.LENGTH_SHORT).show();
+                    else {
+                        long a1 = Long.parseLong(s);
+                        if (a1 < c) {
+                            double z = Math.pow((Math.pow(c, 2) - Math.pow(a1, 2)), 0.5);
+                            result1 = c / z;
 
+                            double y = Double.parseDouble(s1);
+                            // Toast.makeText(MainActivity.this, "result "+y, Toast.LENGTH_SHORT).show();
+                            if (y == result1) {
+                                Toast.makeText(MainActivity2.this, "Your answer is right", Toast.LENGTH_SHORT).show();
+                                textView2.setText("Your answer is correct ");
+                                view.setBackgroundResource(R.color.green);
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        view.setBackgroundResource(R.color.white);
+                                    }
+                                }, 2000);
+
+                            } else {
+                                Toast.makeText(MainActivity2.this, "Your answer is wrong", Toast.LENGTH_SHORT).show();
+                                v.vibrate(400);
+                                textView2.setText("Your answer is wrong\nThe correct answer is\n" + result1);
+                                view.setBackgroundResource(R.color.red);
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        view.setBackgroundResource(R.color.white);
+                                    }
+                                }, 2000);
+
+                            }
                         } else {
-                            Toast.makeText(MainActivity2.this, "Your answer is wrong", Toast.LENGTH_SHORT).show();
-                            v.vibrate(400);
-                            textView2.setText("Your answer is wrong\nThe correct answer is\n" + result1);
-                            view.setBackgroundResource(R.color.red);
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    view.setBackgroundResource(R.color.white);
-                                }
-                            }, 2000);
-
+                            Toast.makeText(MainActivity2.this, "The value of velocity entered is invalid.", Toast.LENGTH_SHORT).show();
                         }
-                    }
-
-                    else
-                    {
-                        Toast.makeText(MainActivity2.this, "The value of velocity entered is invalid.", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
