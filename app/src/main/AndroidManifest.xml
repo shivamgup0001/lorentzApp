@@ -30,5 +30,5 @@
             android:label="Check for Lorentz factor"
             android:parentActivityName=".MainActivity" />
     </application>
-
+    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>
